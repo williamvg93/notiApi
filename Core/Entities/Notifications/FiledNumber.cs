@@ -10,4 +10,8 @@ public class FiledNumber : BaseEntity
     public DateTime CreationDate { get; set; }
     public DateTime ModificationDate { get; set; }
 
+    /* Foreign Key for Notification Modules */
+    public ICollection<NotificationModule> NotiModules { get; set; }
+
+    /* ------------------------------------ */
 }

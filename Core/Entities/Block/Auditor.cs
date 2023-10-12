@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Core.Entities.Notifications;
+namespace Core.Entities.Block;
 
-public class Formats : BaseEntity
+public class Auditor : BaseEntity
 {
     public string Name { get; set; }
+    public string ActionDescription { get; set; }
     public DateTime CreationDate { get; set; }
     public DateTime ModificationDate { get; set; }
 
     /* Foreign Key for Notification Modules */
-    public ICollection<NotificationModule> NotiModules { get; set; }
+    public ICollection<BlockChain> BlockChains { get; set; }
     /* ------------------------------------ */
 }

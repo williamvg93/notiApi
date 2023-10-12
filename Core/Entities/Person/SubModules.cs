@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Core.Entities.Notifications;
+namespace Core.Entities.Person;
 
-public class Formats : BaseEntity
+public class SubModules : BaseEntity
 {
     public string Name { get; set; }
     public DateTime CreationDate { get; set; }
     public DateTime ModificationDate { get; set; }
 
-    /* Foreign Key for Notification Modules */
-    public ICollection<NotificationModule> NotiModules { get; set; }
-    /* ------------------------------------ */
+    /* Foreign Key for Teacher Sub Module */
+    public ICollection<TeacherSubModule> TeacherSubModules { get; set; }
 }
