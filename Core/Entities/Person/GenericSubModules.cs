@@ -21,6 +21,6 @@ public class GenericSubModules : BaseEntity
     public GenericPermissions GenericPermissions { get; set; }
 
     /* Foreign Key for Sub Modules */
-    public int IdSubModulesFk { get; set; }
-    public SubModules SubModules { get; set; }
+    public int IdTeacSubModuFk { get; set; }
+    public TeacherSubModule TeaSubModules { get; set; }
 }

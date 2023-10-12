@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Threading.Tasks;
 
 namespace Core.Entities.Block;
@@ -8,7 +9,7 @@ namespace Core.Entities.Block;
 public class Auditor : BaseEntity
 {
     public string Name { get; set; }
-    public string ActionDescription { get; set; }
+    public long ActionDes { get; set; }
     public DateTime CreationDate { get; set; }
     public DateTime ModificationDate { get; set; }
 

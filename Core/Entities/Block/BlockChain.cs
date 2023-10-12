@@ -12,14 +12,17 @@ public class BlockChain : BaseEntity
     public DateTime CreationDate { get; set; }
     public DateTime ModificationDate { get; set; }
 
-
     /* --------- Foreign Keys ---------- */
 
     /* Foreign Key for Notification Response */
     public int IdNotiRespFk { get; set; }
     public NotificationResponse NotiResponses { get; set; }
 
-    /* Foreign Key for Notification Response */
+    /* Foreign Key for Notification Type */
+    public int IdNotiTypeFk { get; set; }
+    public NotificationType NotiTypes { get; set; }
+
+    /* Foreign Key for Auditor */
     public int IdAuditorFk { get; set; }
     public Auditor Auditors { get; set; }
 

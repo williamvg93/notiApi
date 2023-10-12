@@ -13,8 +13,8 @@ public class TeacherSubModule : BaseEntity
     /* --------- Foreign Keys ---------- */
 
     /* Foreign Key for Rol Teacher */
-    public int IdRolTeacherFk { get; set; }
-    public RolTeacher RolTeachers { get; set; }
+    public int IdTeacherModuFk { get; set; }
+    public TeacherModule TeacherModules { get; set; }
 
     /* Foreign Key for SUb Modules */
     public int IdSubModulesFk { get; set; }

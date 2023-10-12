@@ -16,7 +16,7 @@ public class NotificationModule : BaseEntity
 
     /* Foreign Key for Notification Type */
     public int IdNotiTypeFk { get; set; }
-    public NotificationModule NotiModules { get; set; }
+    public NotificationType NotiTypes { get; set; }
 
     /* Foreign Key for Filed Number */
     public int IdFiledNumFk { get; set; }
@@ -35,7 +35,7 @@ public class NotificationModule : BaseEntity
     public NotificationResponse NotiResponses { get; set; }
 
     /* Foreign Key for Requirement Type */
-    public int IdRequierFk { get; set; }
+    public int IdRequiTypeFk { get; set; }
     public RequirementType RequiTypes { get; set; }
 
 
