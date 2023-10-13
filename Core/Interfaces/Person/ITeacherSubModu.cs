@@ -6,7 +6,7 @@ using Core.Entities.Person;
 
 namespace Core.Interfaces.Person;
 
-public interface ITeaSubModu : IGenericRepository<TeacherSubModule>
+public interface ITeacherSubModu : IGenericRepository<TeacherSubModule>
 {
 
 }
