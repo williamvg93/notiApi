@@ -23,7 +23,7 @@ public class BlockChain : BaseEntity
     public NotificationType NotiTypes { get; set; }
 
     /* Foreign Key for Auditor */
-    public int IdAuditorFk { get; set; }
+    public long IdAuditorFk { get; set; }
     public Auditor Auditors { get; set; }
 
 }

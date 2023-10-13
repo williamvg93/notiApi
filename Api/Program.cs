@@ -1,3 +1,7 @@
+using Api.Extensions;
+using Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,6 +11,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.ConfigureCors();
+builder.Services.AddAplicationServices();
+
+builder.Services.AddDbContext<NotiApiContext>(options =>
+{
+    string connectionStrings = builder.Configuration.GetConnectionString("MysqlConec");
+    options.UseMySql(connectionStrings, ServerVersion.AutoDetect(connectionStrings));
+});
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -15,6 +30,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
 
