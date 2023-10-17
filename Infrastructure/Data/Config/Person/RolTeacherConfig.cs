@@ -13,13 +13,13 @@ public class RolTeacherConfig : IEntityTypeConfiguration<RolTeacher>
     public void Configure(EntityTypeBuilder<RolTeacher> builder)
     {
         /* Assign Table name */
-        builder.ToTable("rol");
+        builder.ToTable("rolteacher");
 
         /* Assign Primary Key */
         builder.HasKey(pk => pk.Id);
+        builder.Property(pk => pk.Id);
 
         /* Assign Colums */
-
         builder.Property(cd => cd.CreationDate)
         .HasColumnType("datetime");
 

@@ -17,9 +17,9 @@ public class NotiModuleConfig : IEntityTypeConfiguration<NotificationModule>
 
         /* Assign Primary Key */
         builder.HasKey(pk => pk.Id);
+        builder.Property(pk => pk.Id);
 
         /* Assign Colums */
-
         builder.Property(n => n.NotiSubject)
         .IsRequired()
         .HasMaxLength(80);

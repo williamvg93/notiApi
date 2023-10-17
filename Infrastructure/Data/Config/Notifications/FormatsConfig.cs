@@ -17,6 +17,7 @@ public class FormatsConfig : IEntityTypeConfiguration<Formats>
 
         /* Assign Primary Key */
         builder.HasKey(pk => pk.Id);
+        builder.Property(pk => pk.Id);
 
         /* Assign Colums */
 

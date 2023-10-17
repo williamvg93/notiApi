@@ -17,9 +17,9 @@ public class SubModulesConfig : IEntityTypeConfiguration<SubModules>
 
         /* Assign Primary Key */
         builder.HasKey(pk => pk.Id);
+        builder.Property(pk => pk.Id);
 
         /* Assign Colums */
-
         builder.Property(n => n.Name)
         .IsRequired()
         .HasMaxLength(50);

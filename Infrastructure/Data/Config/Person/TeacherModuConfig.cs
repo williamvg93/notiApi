@@ -17,6 +17,7 @@ public class TeacherModuConfig : IEntityTypeConfiguration<TeacherModule>
 
         /* Assign Primary Key */
         builder.HasKey(pk => pk.Id);
+        builder.Property(pk => pk.Id);
 
         /* Assign Colums */
         builder.Property(n => n.Name)

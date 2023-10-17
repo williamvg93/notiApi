@@ -17,6 +17,7 @@ public class RolConfig : IEntityTypeConfiguration<Rol>
 
         /* Assign Primary Key */
         builder.HasKey(pk => pk.Id);
+        builder.Property(pk => pk.Id);
 
         /* Assign Colums */
 

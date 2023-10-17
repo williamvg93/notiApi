@@ -17,9 +17,9 @@ public class GenericPermiConfig : IEntityTypeConfiguration<GenericPermissions>
 
         /* Assign Primary Key */
         builder.HasKey(pk => pk.Id);
+        builder.Property(pk => pk.Id);
 
         /* Assign Colums */
-
         builder.Property(n => n.Name)
         .IsRequired()
         .HasMaxLength(50);

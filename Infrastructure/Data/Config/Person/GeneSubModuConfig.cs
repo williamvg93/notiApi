@@ -13,10 +13,11 @@ public class GeneSubModuConfig : IEntityTypeConfiguration<GenericSubModules>
     public void Configure(EntityTypeBuilder<GenericSubModules> builder)
     {
         /* Assign Table name */
-        builder.ToTable("rol");
+        builder.ToTable("genericsubmodules");
 
         /* Assign Primary Key */
         builder.HasKey(pk => pk.Id);
+        builder.Property(pk => pk.Id);
 
         /* Assign Colums */
         builder.Property(cd => cd.CreationDate)
@@ -32,11 +33,11 @@ public class GeneSubModuConfig : IEntityTypeConfiguration<GenericSubModules>
         .WithMany(fk => fk.GenericSubModules)
         .HasForeignKey(fk => fk.IdRolFk);
 
-        builder.HasOne(fk => fk.GenericPermissions)
+        builder.HasOne(fk => fk.GenericPermissionss)
         .WithMany(fk => fk.GenericSubModules)
         .HasForeignKey(fk => fk.IdGenePermiFk);
 
-        builder.HasOne(fk => fk.TeaSubModules)
+        builder.HasOne(fk => fk.TeacherSubModules)
         .WithMany(fk => fk.GenericSubModules)
         .HasForeignKey(fk => fk.IdTeacSubModuFk);
 
