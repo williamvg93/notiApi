@@ -119,7 +119,7 @@ public class RequiTypeController : BaseController
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<RequirementTypeDto>> Delete(int id)
+    public async Task<ActionResult<RequirementType>> Delete(int id)
     {
         var requiType = await _unitOfWork.RequiTypes.GetByIdAsync(id);
         if (requiType == null)

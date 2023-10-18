@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Api.Dtos.Get.Block;
+using Api.Dtos.Post.Block;
 using AutoMapper;
 using Core.Entities.Block;
 using Core.Interfaces;
@@ -52,19 +53,19 @@ public class BlockChainController : BaseController
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<BlockChain>> Post(BlockChainDto blockChainDto)
+    public async Task<ActionResult<BlockChain>> Post(BlockChainPDto blockChainPDto)
     {
-        var blockChain = _mapper.Map<BlockChain>(blockChainDto);
+        var blockChain = _mapper.Map<BlockChain>(blockChainPDto);
 
         if (blockChain.CreationDate == DateTime.MinValue)
         {
             blockChain.CreationDate = DateTime.Now;
-            blockChainDto.CreationDate = DateTime.Now;
+            blockChainPDto.CreationDate = DateTime.Now;
         }
         if (blockChain.ModificationDate == DateTime.MinValue)
         {
             blockChain.ModificationDate = DateTime.Now;
-            blockChainDto.ModificationDate = DateTime.Now;
+            blockChainPDto.ModificationDate = DateTime.Now;
         }
 
         this._unitOfWork.BlockChains.Add(blockChain);
@@ -73,8 +74,8 @@ public class BlockChainController : BaseController
         {
             return BadRequest();
         }
-        blockChainDto.Id = blockChain.Id;
-        return CreatedAtAction(nameof(Post), new { id = blockChainDto.Id }, blockChainDto);
+        blockChainPDto.Id = blockChain.Id;
+        return CreatedAtAction(nameof(Post), new { id = blockChainPDto.Id }, blockChainPDto);
     }
 
     /* Update blockChain in the DataBase By ID  */
@@ -82,9 +83,9 @@ public class BlockChainController : BaseController
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<BlockChainDto>> Put(int id, [FromBody] BlockChainDto blockChainDto)
+    public async Task<ActionResult<BlockChainPDto>> Put(int id, [FromBody] BlockChainPDto blockChainPDto)
     {
-        var blockChain = _mapper.Map<BlockChain>(blockChainDto);
+        var blockChain = _mapper.Map<BlockChain>(blockChainPDto);
         if (blockChain.Id == 0)
         {
             blockChain.Id = id;
@@ -101,18 +102,18 @@ public class BlockChainController : BaseController
         if (blockChain.CreationDate == DateTime.MinValue)
         {
             blockChain.CreationDate = DateTime.Now;
-            blockChainDto.CreationDate = DateTime.Now;
+            blockChainPDto.CreationDate = DateTime.Now;
         }
         if (blockChain.ModificationDate == DateTime.MinValue)
         {
             blockChain.ModificationDate = DateTime.Now;
-            blockChainDto.ModificationDate = DateTime.Now;
+            blockChainPDto.ModificationDate = DateTime.Now;
         }
 
-        blockChainDto.Id = blockChain.Id;
+        blockChainPDto.Id = blockChain.Id;
         _unitOfWork.BlockChains.Update(blockChain);
         await _unitOfWork.SaveAsync();
-        return blockChainDto;
+        return blockChainPDto;
     }
 
     /* Delete blockChain in database By ID */

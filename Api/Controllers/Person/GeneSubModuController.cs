@@ -120,7 +120,7 @@ public class GeneSubModuController : BaseController
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<GenericSubModulesDto>> Delete(int id)
+    public async Task<ActionResult<GenericSubModules>> Delete(int id)
     {
         var geneSubMod = await _unitOfWork.GeneSubModules.GetByIdAsync(id);
         if (geneSubMod == null)

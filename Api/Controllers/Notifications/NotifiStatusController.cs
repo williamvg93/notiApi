@@ -119,7 +119,7 @@ public class NotifiStatusController : BaseController
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<NotificationStatusDto>> Delete(int id)
+    public async Task<ActionResult<NotificationStatus>> Delete(int id)
     {
         var notiSta = await _unitOfWork.NotiStatus.GetByIdAsync(id);
         if (notiSta == null)

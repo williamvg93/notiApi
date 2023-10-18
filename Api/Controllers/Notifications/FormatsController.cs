@@ -119,7 +119,7 @@ public class FormatsController : BaseController
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<FormatsDto>> Delete(int id)
+    public async Task<ActionResult<Formats>> Delete(int id)
     {
         var format = await _unitOfWork.Formats.GetByIdAsync(id);
         if (format == null)

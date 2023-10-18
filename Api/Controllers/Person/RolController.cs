@@ -119,7 +119,7 @@ public class RolController : BaseController
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<RolDto>> Delete(int id)
+    public async Task<ActionResult<Rol>> Delete(int id)
     {
         var rol = await _unitOfWork.Rols.GetByIdAsync(id);
         if (rol == null)

@@ -121,7 +121,7 @@ public class NotifiModuleController : BaseController
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<NotificationModuleDto>> Delete(int id)
+    public async Task<ActionResult<NotificationModule>> Delete(int id)
     {
         var notiModule = await _unitOfWork.NotiModules.GetByIdAsync(id);
         if (notiModule == null)

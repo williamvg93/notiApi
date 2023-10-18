@@ -119,7 +119,7 @@ public class GenePermiController : BaseController
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<GenericPermissionsDto>> Delete(int id)
+    public async Task<ActionResult<GenericPermissions>> Delete(int id)
     {
         var genePermi = await _unitOfWork.GenePermissions.GetByIdAsync(id);
         if (genePermi == null)
