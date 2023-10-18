@@ -25,8 +25,8 @@ namespace Infrastructure.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<long>("ActionDes")
-                        .HasColumnType("long");
+                    b.Property<int>("ActionDes")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime");

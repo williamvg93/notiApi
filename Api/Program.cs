@@ -1,3 +1,4 @@
+using System.Reflection;
 using Api.Extensions;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +13,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.ConfigureCors();
+/* Necesario para la IUnitOfWork */
 builder.Services.AddAplicationServices();
+
+/* Necesario para el AutoMapper */
+builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
 
 builder.Services.AddDbContext<NotiApiContext>(options =>
 {

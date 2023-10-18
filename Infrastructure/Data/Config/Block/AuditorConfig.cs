@@ -26,7 +26,7 @@ public class AuditorConfig : IEntityTypeConfiguration<Auditor>
 
         builder.Property(n => n.ActionDes)
         .IsRequired()
-        .HasColumnType("long");
+        .HasColumnType("int");
 
         builder.Property(cd => cd.CreationDate)
         .HasColumnType("datetime");

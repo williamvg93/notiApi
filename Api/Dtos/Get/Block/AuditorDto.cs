@@ -9,7 +9,7 @@ public class AuditorDto
 {
     public int Id { get; set; }
     public string Name { get; set; }
-    public long ActionDes { get; set; }
+    public int ActionDes { get; set; }
     public DateTime CreationDate { get; set; }
     public DateTime ModificationDate { get; set; }
 }

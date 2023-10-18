@@ -234,11 +234,11 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 
     public void Dispose()
     {
-        throw new NotImplementedException();
+        _context.Dispose();
     }
 
     public Task<int> SaveAsync()
     {
-        throw new NotImplementedException();
+        return _context.SaveChangesAsync();
     }
 }
