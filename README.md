@@ -101,7 +101,7 @@ dotnet sln list
 > Ubicarse en la carpeta **_Core_** del proyecto, crear una carpeta llamada **_Entities_**, dentro de esta carpeta crear la clase **_BaseEntity_**.
 
 - ### Puede crear una nueva clase de la siguiente manera:
-  - ![Sln List](Img/NewClass.png)
+  - ![Sln List](Img/Newclass.png)
 
 > En BaseEntity agregamos los datos(columnas o Atribbutos) que se repitn en todas las tablas de la DB, para este caso serian **_Id, CreationDate, ModificationDate_**.
 
