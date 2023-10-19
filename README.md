@@ -85,27 +85,27 @@ dotnet sln list
 
 - ## Para Api:
   - #### AspNetCoreRateLimit
-    - ![Sln List](Img/CoreRate.png)
+    - ![CoreRate](Img/CoreRate.png)
   - #### AutoMapper
-    - ![Sln List](Img/AutoMapper.png)
+    - ![AutoMapper](Img/AutoMapper.png)
   - #### Microsoft.EntityFrameworkCore.Design
-    - ![Sln List](Img/EntityDesing.png)
+    - ![EntityDesing](Img/EntityDesing.png)
 - ## Para Infrastructure:
   - #### Microsoft.EntityFrameworkCore
-    - ![Sln List](Img/EntityFra.png)
+    - ![EntityFra](Img/EntityFra.png)
   - #### Pomelo.EntityFrameworkCore.MySql
-    - ![Sln List](Img/AutoMapper.png)
+    - ![AutoMapper](Img/AutoMapper.png)
 
 # Crear La carpeta Entities y la clase BaseEntity
 
 > Ubicarse en la carpeta **_Core_** del proyecto, crear una carpeta llamada **_Entities_**, dentro de esta carpeta crear la clase **_BaseEntity_**.
 
 - ### Puede crear una nueva clase de la siguiente manera:
-  - ![Sln List](Img/Newclass.png)
+  - ![Newclass](Img/Newclass.png)
 
 > En BaseEntity agregamos los datos(columnas o Atribbutos) que se repitn en todas las tablas de la DB, para este caso serian **_Id, CreationDate, ModificationDate_**.
 
-![Sln List](Img/BaseEntity.png)
+![BaseEntity](Img/BaseEntity.png)
 
 > Para todas las **_Entidades_** que se creen a partir de este punto, debemos hacer **_Herencia_** de la clase **_BaseEntity_**.
 
@@ -115,14 +115,14 @@ dotnet sln list
 
 - ## En las 3 subcarpetas se deben agregar las siguientes entitades:
 
-  - ![Sln List](Img/AllEntites.png)
+  - ![AllEntites](Img/AllEntites.png)
 
 - ## Ejemplo de como seria una entitdad con realación de 1 a muchos, donde esta seria el 1:
 
-  - ![Sln List](Img/Entity1.png)
+  - ![Entity1](Img/Entity1.png)
 
 - ## Ejemplo de como seria una entitdad con realación de 1 a muchos, donde esta seria el muchos:
-  - ![Sln List](Img/EntityM.png)
+  - ![EntityM](Img/EntityM.png)
 
 # Crear Dtos para cada una de las Entidades Creadas
 
@@ -130,16 +130,41 @@ dotnet sln list
 
 - ## En la Carpeta Api crear una carpeta llamada Dtos, así mismo crear 2 subcarpetas con el nombre Get y Post, despues agregar las 3 subcarpetas para mantener el orden ya establecido.
 
-  - ![Sln List](Img/Dtos.png)
+  - ![Dtos](Img/Dtos.png)
 
   > El Proposito de crear estas 2 subcarpetas es para separar los **_Dtos_** que se utilizarán en las peticiones **_Get_** y cuales en las peticiones **_Post_**.
 
 - ## Ejemplo Dto Get
 
-  - ![Sln List](Img/DtoGet.png)
+  - ![DtoGet](Img/DtoGet.png)
     > En los **_Dtos Get_** evitamos colocar las columnas o campos que son de **_llaves foraneas_** o **_Icollection_** de referecnias a otras **_Entidades_**.
 
 - ## Ejemplo Dto Post
 
-  - ![Sln List](Img/DtoPost.png)
+  - ![DtoPost](Img/DtoPost.png)
     > En los **_Dtos Post_** por lo general dejamos casi todos los campos, esto para evitar errores en las peticiones **_PUT_** O **_Post_**.
+
+- ## En Api crear una carpeta llamada Profile, despues crear una nueva clase llamada MappingProfiles
+
+  - ![Profile](Img/Profile.png)
+    > En esta clase debemos agregar el respectivo **_mapeo_** para cada entidad.
+
+  - ![Profile](Img/Mapping.png)
+    > Ejemplo de como crear los **_Mapeos_** para las **_Entidades_**, tanto para el **_Dto Get_** como el **_Post_**.
+
+# En Infrastructure Crear la carpeta Data y una subcarpeta llamada Configuration, adicionalmente crear la clase Context.
+
+> Por buenas practicas al archivo **_Context_** se le puede dar el nombre de la **_Api_** seguido de la palabra **_Context_** **_(NotiApiContext)_**.
+
+![Profile](Img/Data.png)
+
+  - ## Crear los DbSet para cada una de las Entidades creadas.
+    > la clase principal del archivo **_Context_** debe **_heredar_** de la clase **_DbContext_**, la cual viene con el paquete de **_EntityFrameworkCore_** que se instaló previamente.
+
+    > Ejemplo de como se deben crear los DbSet para cada **_Entidad_**.
+
+    ![Profile](Img/Noticontext.png)
+
+   - ## Agregar el metodo OnModelCreating en el archico Context.
+     ![Profile](Img/OnModel.png)
+

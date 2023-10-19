@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Api.Dtos.Get.Person;
+using Api.Dtos.Post.Person;
 using AutoMapper;
 using Core.Entities.Person;
 using Core.Interfaces;
@@ -52,19 +53,19 @@ public class RolTeacherController : BaseController
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<RolTeacher>> Post(RolTeacherDto rolTeacherDto)
+    public async Task<ActionResult<RolTeacher>> Post(RolTeacherPDto rolTeacherPDto)
     {
-        var rolTeacher = _mapper.Map<RolTeacher>(rolTeacherDto);
+        var rolTeacher = _mapper.Map<RolTeacher>(rolTeacherPDto);
 
         if (rolTeacher.CreationDate == DateTime.MinValue)
         {
             rolTeacher.CreationDate = DateTime.Now;
-            rolTeacherDto.CreationDate = DateTime.Now;
+            rolTeacherPDto.CreationDate = DateTime.Now;
         }
         if (rolTeacher.ModificationDate == DateTime.MinValue)
         {
             rolTeacher.ModificationDate = DateTime.Now;
-            rolTeacherDto.ModificationDate = DateTime.Now;
+            rolTeacherPDto.ModificationDate = DateTime.Now;
         }
 
         this._unitOfWork.RolTeachers.Add(rolTeacher);
@@ -73,8 +74,8 @@ public class RolTeacherController : BaseController
         {
             return BadRequest();
         }
-        rolTeacherDto.Id = rolTeacher.Id;
-        return CreatedAtAction(nameof(Post), new { id = rolTeacherDto.Id }, rolTeacherDto);
+        rolTeacherPDto.Id = rolTeacher.Id;
+        return CreatedAtAction(nameof(Post), new { id = rolTeacherPDto.Id }, rolTeacherPDto);
     }
 
     /* Update Rol Teacher in the DataBase By ID  */
@@ -82,9 +83,9 @@ public class RolTeacherController : BaseController
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<RolTeacherDto>> Put(int id, [FromBody] RolTeacherDto rolTeacherDto)
+    public async Task<ActionResult<RolTeacherPDto>> Put(int id, [FromBody] RolTeacherPDto rolTeacherPDto)
     {
-        var rolTeacher = _mapper.Map<RolTeacher>(rolTeacherDto);
+        var rolTeacher = _mapper.Map<RolTeacher>(rolTeacherPDto);
         if (rolTeacher.Id == 0)
         {
             rolTeacher.Id = id;
@@ -101,18 +102,18 @@ public class RolTeacherController : BaseController
         if (rolTeacher.CreationDate == DateTime.MinValue)
         {
             rolTeacher.CreationDate = DateTime.Now;
-            rolTeacherDto.CreationDate = DateTime.Now;
+            rolTeacherPDto.CreationDate = DateTime.Now;
         }
         if (rolTeacher.ModificationDate == DateTime.MinValue)
         {
             rolTeacher.ModificationDate = DateTime.Now;
-            rolTeacherDto.ModificationDate = DateTime.Now;
+            rolTeacherPDto.ModificationDate = DateTime.Now;
         }
 
-        rolTeacherDto.Id = rolTeacher.Id;
+        rolTeacherPDto.Id = rolTeacher.Id;
         _unitOfWork.RolTeachers.Update(rolTeacher);
         await _unitOfWork.SaveAsync();
-        return rolTeacherDto;
+        return rolTeacherPDto;
     }
 
     /* Delete Rol Teacher in database By ID */

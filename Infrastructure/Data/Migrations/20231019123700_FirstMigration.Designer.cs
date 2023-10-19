@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(NotiApiContext))]
-    [Migration("20231018025902_FirstMigration")]
+    [Migration("20231019123700_FirstMigration")]
     partial class FirstMigration
     {
         /// <inheritdoc />

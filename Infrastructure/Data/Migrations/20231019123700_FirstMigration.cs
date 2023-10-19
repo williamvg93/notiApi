@@ -209,11 +209,11 @@ namespace Infrastructure.Data.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     GeneratedHash = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    CreationDate = table.Column<DateTime>(type: "datetime", nullable: false),
-                    ModificationDate = table.Column<DateTime>(type: "datetime", nullable: false),
                     IdNotiRespFk = table.Column<int>(type: "int", nullable: false),
                     IdNotiTypeFk = table.Column<int>(type: "int", nullable: false),
-                    IdAuditorFk = table.Column<int>(type: "int", nullable: false)
+                    IdAuditorFk = table.Column<int>(type: "int", nullable: false),
+                    CreationDate = table.Column<DateTime>(type: "datetime", nullable: false),
+                    ModificationDate = table.Column<DateTime>(type: "datetime", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -249,14 +249,14 @@ namespace Infrastructure.Data.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Text = table.Column<string>(type: "varchar(2000)", maxLength: 2000, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    CreationDate = table.Column<DateTime>(type: "datetime", nullable: false),
-                    ModificationDate = table.Column<DateTime>(type: "datetime", nullable: false),
                     IdNotiTypeFk = table.Column<int>(type: "int", nullable: false),
                     IdFiledNumFk = table.Column<int>(type: "int", nullable: false),
                     IdFotmatFk = table.Column<int>(type: "int", nullable: false),
                     IdNotiStatusFk = table.Column<int>(type: "int", nullable: false),
                     IdNotiResFk = table.Column<int>(type: "int", nullable: false),
-                    IdRequiTypeFk = table.Column<int>(type: "int", nullable: false)
+                    IdRequiTypeFk = table.Column<int>(type: "int", nullable: false),
+                    CreationDate = table.Column<DateTime>(type: "datetime", nullable: false),
+                    ModificationDate = table.Column<DateTime>(type: "datetime", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -306,10 +306,10 @@ namespace Infrastructure.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    CreationDate = table.Column<DateTime>(type: "datetime", nullable: false),
-                    ModificationDate = table.Column<DateTime>(type: "datetime", nullable: false),
                     IdRolFk = table.Column<int>(type: "int", nullable: false),
-                    IdTecherModuFk = table.Column<int>(type: "int", nullable: false)
+                    IdTecherModuFk = table.Column<int>(type: "int", nullable: false),
+                    CreationDate = table.Column<DateTime>(type: "datetime", nullable: false),
+                    ModificationDate = table.Column<DateTime>(type: "datetime", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -335,10 +335,10 @@ namespace Infrastructure.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    CreationDate = table.Column<DateTime>(type: "datetime", nullable: false),
-                    ModificationDate = table.Column<DateTime>(type: "datetime", nullable: false),
                     IdTeacherModuFk = table.Column<int>(type: "int", nullable: false),
-                    IdSubModulesFk = table.Column<int>(type: "int", nullable: false)
+                    IdSubModulesFk = table.Column<int>(type: "int", nullable: false),
+                    CreationDate = table.Column<DateTime>(type: "datetime", nullable: false),
+                    ModificationDate = table.Column<DateTime>(type: "datetime", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -364,11 +364,11 @@ namespace Infrastructure.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    CreationDate = table.Column<DateTime>(type: "datetime", nullable: false),
-                    ModificationDate = table.Column<DateTime>(type: "datetime", nullable: false),
                     IdRolFk = table.Column<int>(type: "int", nullable: false),
                     IdGenePermiFk = table.Column<int>(type: "int", nullable: false),
-                    IdTeacSubModuFk = table.Column<int>(type: "int", nullable: false)
+                    IdTeacSubModuFk = table.Column<int>(type: "int", nullable: false),
+                    CreationDate = table.Column<DateTime>(type: "datetime", nullable: false),
+                    ModificationDate = table.Column<DateTime>(type: "datetime", nullable: false)
                 },
                 constraints: table =>
                 {
