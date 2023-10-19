@@ -66,6 +66,9 @@ public class MappingProfiles : Profile
 
         CreateMap<RolTeacher, RolTeacherDto>()
         .ReverseMap();
+        /* Add Dto for request Post */
+        CreateMap<RolTeacher, RolTeacherPDto>()
+        .ReverseMap();
 
         CreateMap<SubModules, SubModulesDto>()
         .ReverseMap();

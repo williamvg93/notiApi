@@ -1,5 +1,6 @@
 using System.Reflection;
 using Api.Extensions;
+using AspNetCoreRateLimit;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,9 +13,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+/* Necesario para agregar los Cors IUnitOfWork */
 builder.Services.ConfigureCors();
 /* Necesario para la IUnitOfWork */
 builder.Services.AddAplicationServices();
+/* Extension necesaria para limitar número de peticiones */
+builder.Services.ConfigureRatelimiting();
 
 /* Necesario para el AutoMapper */
 builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
@@ -36,7 +40,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+/* Implementación de las Cors */
 app.UseCors("CorsPolicy");
+
+/* Implementación del RateLimit */
+app.UseIpRateLimiting();
 
 app.UseHttpsRedirection();
 
