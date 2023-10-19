@@ -7,9 +7,6 @@ namespace Core.Entities.Person;
 
 public class TeacherSubModule : BaseEntity
 {
-    public DateTime CreationDate { get; set; }
-    public DateTime ModificationDate { get; set; }
-
     /* --------- Foreign Keys ---------- */
 
     /* Foreign Key for Rol Teacher */

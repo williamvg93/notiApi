@@ -7,9 +7,6 @@ namespace Core.Entities.Person;
 
 public class RolTeacher : BaseEntity
 {
-    public DateTime CreationDate { get; set; }
-    public DateTime ModificationDate { get; set; }
-
     /* --------- Foreign Keys ---------- */
 
     /* Foreign Key for Notification Status */

@@ -7,8 +7,6 @@ namespace Core.Entities.Person;
 
 public class GenericSubModules : BaseEntity
 {
-    public DateTime CreationDate { get; set; }
-    public DateTime ModificationDate { get; set; }
 
     /* --------- Foreign Keys ---------- */
 

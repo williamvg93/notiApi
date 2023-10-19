@@ -9,8 +9,6 @@ namespace Core.Entities.Block;
 public class BlockChain : BaseEntity
 {
     public string GeneratedHash { get; set; }
-    public DateTime CreationDate { get; set; }
-    public DateTime ModificationDate { get; set; }
 
     /* --------- Foreign Keys ---------- */
 

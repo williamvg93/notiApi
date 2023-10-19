@@ -9,8 +9,6 @@ public class NotificationModule : BaseEntity
 {
     public string NotiSubject { get; set; }
     public string Text { get; set; }
-    public DateTime CreationDate { get; set; }
-    public DateTime ModificationDate { get; set; }
 
     /* --------- Foreign Keys ---------- */
 

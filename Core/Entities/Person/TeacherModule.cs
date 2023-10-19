@@ -8,8 +8,6 @@ namespace Core.Entities.Person;
 public class TeacherModule : BaseEntity
 {
     public string Name { get; set; }
-    public DateTime CreationDate { get; set; }
-    public DateTime ModificationDate { get; set; }
 
     /* Foreign Key for Rol Teachers */
     public ICollection<RolTeacher> RolTeachers { get; set; }
