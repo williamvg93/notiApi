@@ -112,3 +112,34 @@ dotnet sln list
 # Crear Entities para cada una de las tablas de la DB
 
 > Ubicarse en la carpeta **_Core_** del proyecto, crear la carpeta **_Entities_**, dentro de esta carpeta se van a dividir crear 3 **_Subcarpetas (Block, Notifications, Person)_**, esto para crear una división entre las entidades y así poder acceder o realizar busquedas de manera rapida.
+
+- ## En las 3 subcarpetas se deben agregar las siguientes entitades:
+
+  - ![Sln List](Img/AllEntites.png)
+
+- ## Ejemplo de como seria una entitdad con realación de 1 a muchos, donde esta seria el 1:
+
+  - ![Sln List](Img/Entity1.png)
+
+- ## Ejemplo de como seria una entitdad con realación de 1 a muchos, donde esta seria el muchos:
+  - ![Sln List](Img/EntityM.png)
+
+# Crear Dtos para cada una de las Entidades Creadas
+
+> El proposito de crear los **_Dtos_** es restringir que infromación se enviará como respuesta cuando se realice una petición a nuestra App.
+
+- ## En la Carpeta Api crear una carpeta llamada Dtos, así mismo crear 2 subcarpetas con el nombre Get y Post, despues agregar las 3 subcarpetas para mantener el orden ya establecido.
+
+  - ![Sln List](Img/Dtos.png)
+
+  > El Proposito de crear estas 2 subcarpetas es para separar los **_Dtos_** que se utilizarán en las peticiones **_Get_** y cuales en las peticiones **_Post_**.
+
+- ## Ejemplo Dto Get
+
+  - ![Sln List](Img/DtoGet.png)
+    > En los **_Dtos Get_** evitamos colocar las columnas o campos que son de **_llaves foraneas_** o **_Icollection_** de referecnias a otras **_Entidades_**.
+
+- ## Ejemplo Dto Post
+
+  - ![Sln List](Img/DtoPost.png)
+    > En los **_Dtos Post_** por lo general dejamos casi todos los campos, esto para evitar errores en las peticiones **_PUT_** O **_Post_**.
